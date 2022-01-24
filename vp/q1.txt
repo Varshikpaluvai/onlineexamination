@@ -1,0 +1,89 @@
+<html>
+<head runat="server">
+<style>
+h2{
+	background-color:;
+}
+#text{
+		position:relative;
+		left:-8px;
+		width:101%;
+	background-color:purple;
+	}
+
+</style></head>
+<body onload="f1()" >
+<form action="q1.html" method="post">
+<h2 align="center"><font color="purple">Welcome To </font><font color="orange"> O.A.T </font><font color="purple">Online Examination</font> </h2>
+    <script language ="javascript" >
+        var tim;
+        var min = 29;
+	
+        var sec = 60;
+        var f = new Date();
+        function f1() {
+            f2();
+            document.getElementById("starttime").innerHTML = "Exam Started at: " + f.getHours() + ":" + f.getMinutes();
+           
+          
+        }
+        function f2() {
+            if (parseInt(sec) > 0) {
+                sec = parseInt(sec) - 1;
+                document.getElementById("showtime").innerHTML = "Time Left:"+min+":" + sec;
+				tim = setTimeout("f2()", 1000);
+                
+            }
+	
+            else {
+                if (parseInt(sec) == 0) {
+                  min = parseInt(min) - 1;  
+                    if (parseInt(min) == -1) {
+                        clearTimeout(tim);
+                        location.href = "exam.html";
+                    }
+                    else {
+                        sec = 60;
+                        document.getElementById("showtime").innerHTML = "Time Left:" + min+ ":" + sec;
+                      tim = setTimeout("f2()", 1000);
+                    }
+                }
+               
+            }
+        }
+    </script>
+
+    <form id="form1" runat="server">
+    <div align="right">       
+        
+          
+            <div id="starttime"></div>
+ 
+            <div id="endtime"></div>
+ 
+            <div id="showtime"></div>
+          
+        
+ </div>
+</form>
+<hr
+<h3>1.What type of language does C holds?</h3>
+<p><input type="radio" name="1">Object oriented</br>
+<input type="radio" name="1">procedure oriented</br>
+<input type="radio" name="1">Both</br>
+<input type="radio" name="1">None</p>
+&nbsp;&nbsp;&nbsp;</br>
+<h3>1.What type of language does C holds?</h3>
+<p><input type="radio" name="1">Object oriented</br>
+<input type="radio" name="1">procedure oriented</br>
+<input type="radio" name="1">Both</br>
+<input type="radio" name="1">None</p></br>
+<h3>1.What type of language does C holds?</h3>
+<p><input type="radio" name="1">Object oriented</br>
+<input type="radio" name="1">procedure oriented</br>
+<input type="radio" name="1">Both</br>
+<input type="radio" name="1">None</p>
+<input type="button" onclick="location.href='q2.php';" value="submit">
+</form>
+</body>
+</html>
